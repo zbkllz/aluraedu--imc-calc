@@ -81,19 +81,22 @@ label {
 .campo {
 	margin: 0;
 	padding-bottom: 1em;
-	width: 100%;
 	border: 1px solid #ccc;
-	padding: .7em;
+	padding: .8em;
 	width: 100%;
 }
 
 .campo-medio {
-	display: inline-block;
-	padding-right: .5em;
+	margin: 0;
+	padding-bottom: 1em;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 0.7em;
+	
 }
 
 .grupo {
-	width: 32%;
+	width: 33%;
 	display: inline-block;
 	padding: 10px 0px;
 }
@@ -105,6 +108,7 @@ button {
 	font-size: 1.2em;
 	cursor: pointer;
 	margin: 0;
+	text-align: center;
 	margin-top: -3px;
 	color: #fff;
 	background-color: #0c8cd3;
@@ -136,10 +140,11 @@ button:disabled {
 	border: 1px solid red;
 }
 
-#mensagem-error {
-	color: red;
-}
 
 .paciente-invalido {
 	background-color: lightcoral;
+}
+
+#error-message {
+	color: red;
 }
