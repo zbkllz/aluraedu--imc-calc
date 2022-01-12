@@ -10,27 +10,28 @@ btnAdd.addEventListener('click', function (event) {
   var patientTr = createTr(patient)
 
   var fatalError = patientValidate(patient)
-
+  
   if (fatalError.length > 0) {
-    var errorMsg = document.querySelector("#error-message");
-    errorMsg.textContent = fatalError;
-    return;
+    var errorMsg = document.querySelector('#error-message')
+    errorMsg.textContent = fatalError
+    return
   }
 
-  <li></li>
-
   var table = document.querySelector('#tabela-pacientes')
-
   table.appendChild(patientTr)
-
   form.reset()
+
+  var errorMsg = document.querySelector('#error-message')
+  errorMsg.innerHTML = ''
 })
 
 function showErrorMessage(fatalError) {
   var ul = document.querySelector('#error-message')
-  fatalError.forEach(function (fatalError){
+  ul.innerHTML = ''
+
+  fatalError.forEach(function (error) {
     var li = document.createElement('li')
-    li.textContent = fatalError;
+    li.textContent = error
     ul.appendChild(li)
   })
 }
@@ -44,21 +45,29 @@ function createTd(dado, classe) {
 }
 
 function patientValidate(patient) {
-  var fatalError = [];
+  var fatalError = []
+
+  if (patient.nome.length == 0) {
+    fatalError.push('Nome não pode estar em branco')
+  }
+  if (patient.peso.length == 0) {
+    fatalError.push('Peso não pode estar em branco')
+  }
+  if (patient.altura.length == 0) {
+    fatalError.push('Altura não pode estar em branco')
+  }
+  if (patient.gordura.length == 0) {
+    fatalError.push('Percentual não pode estar em branco')
+  }
 
   if (!weightValidate(patient.peso)) {
-    return ""
-  } else {
-    fatalError.push("Peso inválido")
+    fatalError.push('Peso inválido')
   }
 
   if (!heightValidate(patient.altura)) {
-    return ""
-  } else {
-    fatalError.push("Altura inválida")
+    fatalError.push('Altura inválida')
   }
-
-  return fatalError;
+  return fatalError
 }
 
 function createTr(patient) {

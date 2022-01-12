@@ -11,19 +11,18 @@ function imcCalc(peso, altura) {
   return imc.toFixed(2)
 }
 
-
-function weightValidate(peso){
-  if(peso >= 0 && peso <=1000){
-    return true 
-  }else{
+function weightValidate(peso) {
+  if (peso > 0 && peso < 1000) {
+    return true
+  } else {
     return false
   }
 }
 
-function heightValidate(altura){
-  if(altura >= 0 && altura <= 3.0){
+function heightValidate(altura) {
+  if (altura >= 0 && altura <= 3.0) {
     return true
-  }else{
+  } else {
     return false
   }
 }
@@ -39,8 +38,8 @@ for (var i = 0; i < patients.length; i++) {
 
   var tdImc = patient.querySelector('.info-imc')
 
-  var pesoValido = weightValidate(peso);
-  var alturaValida = heightValidate(altura);
+  var pesoValido = weightValidate(peso)
+  var alturaValida = heightValidate(altura)
 
   if (!weightValidate) {
     console.log('Peso inválido!')
