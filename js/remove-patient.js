@@ -1,7 +1,15 @@
-var patients = document.querySelectorAll('.patient')
+var table = document.querySelector('#tabela-pacientes')
 
-patients.forEach(function (patient) {
-  patient.addEventListener('dblclick', function () {
-    this.remove()
-  })
+table.addEventListener('dblclick', function (event) {
+  event.target.parentNode.classList.add('fadeOut')
+
+  // {
+  //   event.target.parentNode.remove()
+  // }
+
+  setTimeout(function () {
+    if (event.target.tagName == 'td') {
+      event.target.parentNode.remove()
+    }
+  }, 500)
 })

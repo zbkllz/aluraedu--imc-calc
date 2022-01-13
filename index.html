@@ -17,6 +17,8 @@
       <section class="container">
         <h2>Meus pacientes</h2>
         <table>
+          <label for="nome">Filtrar:</label>
+          <input type="text" name="filtro" id="filter-table" placeholder="Digite o nome do paciente">
           <thead>
             <tr>
               <th>Nome</th>
@@ -86,7 +88,7 @@
                 id="peso"
                 name="peso"
                 type="text"
-                placeholder="digite o peso do seu paciente"
+                placeholder="Digite o peso do seu paciente"
                 class="campo"
               />
             </div>
@@ -96,7 +98,7 @@
                 id="altura"
                 name="altura"
                 type="text"
-                placeholder="digite a altura do seu paciente"
+                placeholder="Digite a altura do seu paciente"
                 class="campo"
               />
             </div>
@@ -105,7 +107,7 @@
               <input
                 id="gordura"
                 type="text"
-                placeholder="digite a porcentagem de gordura do seu paciente"
+                placeholder="Digite a porcentagem de gordura do seu paciente"
                 class="campo"
               />
             </div>
@@ -119,5 +121,6 @@
     <script src="js/imc-calc.js"></script>
     <script src="js/form.js"></script>
     <script src="js/remove-patient.js"></script>
+    <script src="js/filtra.js"></script>
   </body>
 </html>

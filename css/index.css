@@ -148,3 +148,19 @@ button:disabled {
 #error-message {
 	color: red;
 }
+ .fadeOut{
+	 opacity: 0;
+	 transition:0.5s;
+ }
+
+ .invisible{
+	 display:none;
+ }
+
+ #filter-table{
+	 width: 200px;
+	 height:35px;
+	 margin-bottom:10px;
+	 /* text-align: center; */
+ }
+
