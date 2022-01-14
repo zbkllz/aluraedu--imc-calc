@@ -7,23 +7,27 @@ btnAdd.addEventListener('click', function (event) {
 
   var form = document.querySelector('#form-adiciona')
   var patient = getPatientData(form)
-  var patientTr = createTr(patient)
 
   var fatalError = patientValidate(patient)
-  
   if (fatalError.length > 0) {
     var errorMsg = document.querySelector('#error-message')
     errorMsg.textContent = fatalError
     return
   }
+  
+  addPatientaAtTable(patient)
 
-  var table = document.querySelector('#tabela-pacientes')
-  table.appendChild(patientTr)
   form.reset()
 
   var errorMsg = document.querySelector('#error-message')
   errorMsg.innerHTML = ''
 })
+
+function addPatientaAtTable(patient) {
+  var patientTr = createTr(patient)
+  var table = document.querySelector('#tabela-pacientes')
+  table.appendChild(patientTr)
+}
 
 function showErrorMessage(fatalError) {
   var ul = document.querySelector('#error-message')
